@@ -1,0 +1,60 @@
+<html>
+ <head>
+     <h1 align="center">Liter Converter</h1>
+    </head>
+<style>
+    #box{position: absolute;
+         right: 600px;
+         background-color: #FFC300;
+         border: 2px solid #FF6400;
+         border-radius: 12px;
+         height:250px;
+         width:250px;}
+   
+    #clear{position: absolute;
+           right: 35px;
+           top: 45px; }
+    
+    h1{color:#FF6400 }
+    
+    b{color:#FC4500}
+ 
+</style>  
+ <body>
+<div id="box">
+  <form name="literconverter">
+  <p align="left">
+   <b>Liters</b><br>
+   <input placeholder="Liters" type="text" value = "" name="literdisplay">
+   <input type="button" value="Convert" onclick="Quatersform.Quatersdisplay.value=eval(1.056688*literconverter.literdisplay.value); pintform.pintdisplay.value=eval(2.11338*literconverter.literdisplay.value); Gform.Gdisplay.value=eval(0.264172*literconverter.literdisplay.value)">
+  </p>
+  </form>
+  
+  <form name="Quatersform">
+  <p align="left">
+   <b>Quaters</b><br>
+   <input placeholder="Quaters" type="text" name="Quatersdisplay">
+  </p>
+  </form>
+
+  <form name="pintform">
+  <p align="left">
+   <b>Pints</b> <br>
+   <input placeholder="Pints" type="text" name="pintdisplay">
+  </p>
+  </form>
+   
+  <form name="Gform">
+  <p align="left">
+   <b>Gallons</b> <br>
+   <input placeholder="Gallons" type="text" name="Gdisplay">
+  </p>
+  </form>
+
+  <p id ="clear"align="left">
+   <input type="button" name="clear" value="Clear Values" onclick="literconverter.literdisplay.value=''; Quatersform.Quatersdisplay.value=''; pintform.pintdisplay.value=''; Gform.Gdisplay.value=''">
+  </p>
+</div>
+ </body>
+</html>
+

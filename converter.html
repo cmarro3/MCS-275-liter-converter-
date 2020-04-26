@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My title</title>
+</head>
+<style>
+body {
+   width: 600px;
+margin: auto;
+}
+
+input, button {
+width: 300px;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+input[type=button], input[type=reset] {
+   width: 200px;
+float: right;
+}
+input[type=button]:hover, input[type=reset]:hover {
+background-color: #45a049;
+}
+label {
+   float: right;
+width: 200px;
+text-align: center;
+padding: 12px 10px;
+display: inline-block;
+}
+
+div {
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+}
+</style>
+<body>
+
+<h3>Volume COnverter</h3>
+
+<div>
+<form>
+<h3> INPUT (litres) </h3>
+<button><input type="button" value="Submit" onClick="convert()" ></button>
+<input type="number" id="litre" name="litre" placeholder="Value in Litre">
+<button><input type="reset" value="Reset"></button>
+
+
+<div style="clear:both">
+
+
+<h3> OUTPUT </h3>
+<label for="pints">Pints</label>
+<input type="number" id="pints" name="pints" placeholder="Value in Pints">
+
+<label for="lname">Quarts</label>
+<input type="number" id="quarts" name="quarts" placeholder="Value in Quarts">
+
+<label for="lname">Gallons</label>
+<input type="number" id="gallons" name="gallons" placeholder="Value in Gallons">
+
+</form>
+</div>
+<script>
+function convert() {
+var lit = document.getElementById("litre").value;
+var gal = lit * 0.264172;
+var qur = gal * 4 ;
+var pin = gal * 8 ;
+document.getElementById("pints").value = pin ;
+document.getElementById("quarts").value = qur ;
+document.getElementById("gallons").value = gal ;
+}
+
+</script>
+</body>
+</html>

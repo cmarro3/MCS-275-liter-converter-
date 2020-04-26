@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Converter</title>
+
+   <!-- Css for form -->
+   <style>
+
+       /*Style to get the form in center having class main */
+       .main
+       {
+           width: 400px;
+           margin: 0 auto;
+           margin-top: 10%;
+       }
+
+       /* making space between input field and text */
+       input
+       {
+           margin-right: 20px;
+           margin-left: 15px;
+       }
+
+       /*aligning the clear button to right */
+       input[type="reset"]
+       {
+           margin-left: 255px;
+       }
+
+       /*Increasing input field width and height*/
+       input[type="text"]
+       {
+           width: 165px;
+           padding: 8px;
+           border-radius: 8px;
+           background-color: #dddddd;
+           border: 1px solid #98aaba;
+       }
+
+       /* Applying style to button reset and clear */
+       input[type="submit"], input[type="reset"]
+       {
+           padding: 8px;
+           width: 115px;
+           border-radius: 8px;
+           border: 1px solid #98aaba;
+           font-size: 16px;
+           cursor: pointer;
+       }
+
+       /*Applying the margin-bottom to convert button */
+       input[type="submit"]
+       {
+           margin-bottom: 5px;
+       }
+
+       /*Applying the style to the text displayed right of the input field having span tag and class text*/
+       .text
+       {
+           font-size: 18px;
+           font-family: sans-serif;
+       }
+   </style>
+
+   <!-- javascript code for converter -->
+   <script type="text/javascript">
+
+        //below function get called when the Convert button is clicked in html
+       function Convert()
+       {
+           //Read the value of liters from the textbox a
+           var liter = parseFloat(document.getElementById("a").value);
+
+           //If user didn't enters ths value for liter display the alert saying enter the valid value for liter
+           //Also if the user enters the negative valid value for the liters
+           if(!liter || liter < 0)
+           {
+               //display the alert
+               alert("Enter the valid value for liters");
+               //retuen from the function don't exceute the further part
+               return;
+           }
+
+           //Converting the value of liter to quarts
+           var quarts = liter * 1.056688;
+
+           //Converting the value of liter to pints
+           var pints = liter * 2.11338;
+
+           //Converting the value of liter to gallons
+           var gallons = liter * 0.264172;
+
+           //Outputting the pints
+           //tofixed method rounds the value to the 2 decimal places
+           document.getElementById("b").value = pints.toFixed(2);
+
+           //Outputting the quarts
+           //tofixed method rounds the value to the 2 decimal places
+           document.getElementById("c").value = quarts.toFixed(2);
+
+           //Outputting the gallons
+           //tofixed method rounds the value to the 2 decimal places
+           document.getElementById("d").value = gallons.toFixed(2);
+       }
+   </script>
+
+</head>
+<body>
+   <div class="main">
+       <!-- html form starts here -->
+       <form onsubmit="return false">
+
+           <!-- First title of the form INPUT(liters) -->
+           <span class="text">INPUT (liters)</span> <br><br>
+
+           <!-- First input field for A -->
+           <span class="text">A</span>
+           <input type="text" name="" id="a" autocomplete="off">
+
+           <!-- This is the Convert button -->
+           <input type="submit" name="" value="Convert" onclick="Convert()">
+           <br>
+
+           <!-- This is the reset button -->
+           <input type="reset" name="" value="Clear">
+           <br>
+           
+            <!-- This is for displaying title OUTPUT -->
+           <span class="text">OUTPUT</span><br><br>
+
+           <!-- This is for displaying text B and input tag for displaying value in pints-->
+           <span class="text">B</span>
+           <input type="text" name="" autocomplete="off" id="b">
+           <span class="text"> Pints </span> <br><br><br>
+
+           <!-- This is for displaying text C and input tag for displaying value in quarts-->
+           <span class="text">C</span>
+           <input type="text" name="" autocomplete="off" id="c">
+           <span class="text"> Quarts </span> <br><br><br>
+
+           <!-- This is for displaying text D and input tag for displaying value in Gallons -->
+           <span class="text">D</span>
+           <input type="text" name="" autocomplete="off" id="d">
+           <span class="text"> Gallons </span>
+
+       </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+ <head> <h1 align="center">Metric Weight Converter</h1> </head>
+ <body>
+
+<fieldset>
+ <legend> Converter </legend>
+  <form name="kgconverter">
+  <p align="left">
+   <b> Enter Weight in Kilograms</b> <br>
+   <input type="text" value = "" name="kgdisplay">
+   <input type="button" value="Convert" onclick="poundform.pounddisplay.value=eval(2.204*kgconverter.kgdisplay.value); ozform.ozdisplay.value=eval(35.27*kgconverter.kgdisplay.value)">
+  </p>
+  </form>
+
+  <form name="poundform">
+  <p align="left">
+   <b> Weight in Pounds</b> <br>
+   <input type="text" name="pounddisplay">
+  </p>
+  </form>
+
+  <form name="ozform">
+  <p align="left">
+   <b> Weight in Ounces</b> <br>
+   <input type="text" name="ozdisplay">
+  </p>
+  </form>
+
+  <p align="left">
+   <input type="button" name="clear" value="Clear Values" onclick="kgconverter.kgdisplay.value=''; poundform.pounddisplay.value=''; ozform.ozdisplay.value=''">
+  </p>
+</fieldset>
+ </body>
+</html>
+
